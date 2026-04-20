@@ -119,7 +119,7 @@
                 </div>
                 <div class="card-body">
                     <div class="quick-actions">
-                        <div class="quick-action-btn" onclick="showSection('jadwal', document.querySelector('[data-section=jadwal]')); setTimeout(() => openModal('modalTambahJadwal'), 400);">
+                        <div class="quick-action-btn" onclick="showSection('jadwal', document.querySelector('[data-section=jadwal]')); setTimeout(() => openAddModal(), 400);">
                             <div class="quick-action-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -198,7 +198,7 @@
     <div class="card">
         <div class="card-header">
             <div class="card-title">Daftar Jadwal Kegiatan</div>
-            <button class="btn btn-primary btn-sm" onclick="openModal('modalTambahJadwal')">
+            <button class="btn btn-primary btn-sm" onclick="openAddModal()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
@@ -329,12 +329,7 @@
         <div class="card-header">
             <div class="card-title">Grafik Jumlah Promosi Per Bulan</div>
             <div style="display: flex; gap: 8px;">
-                <button class="btn btn-primary btn-sm" onclick="exportReport()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                    </svg>
-                    Export PDF
-                </button>
+
                 <button class="btn btn-sm" id="btnBar" onclick="switchChart('bar')" style="background: var(--lilac-100); color: var(--lilac-700); border: 1.5px solid var(--lilac-200);">
                     Bar
                 </button>
@@ -1295,9 +1290,7 @@ function resetFilter2() {
     updateChart();
 }
 
-function exportReport() {
-    showToast('Fitur export PDF sedang dalam pengembangan', 'success');
-}
+
 
 // ============================================================
 // USER MANAGEMENT LOGIC
